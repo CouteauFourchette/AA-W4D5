@@ -1,0 +1,10 @@
+
+<%= render 'errors' %>
+<div class='form'>
+  <form action="<%= sessions_url %>" method="post">
+    <%= auth_token %>
+    <input type="text" name="email" value="<%= @user.email %>" placeholder="email">
+    <input type="password" name="password" value="<%= @user.password %>" placeholder="password">
+    <input type="submit" value="Sign In" class="submit">
+  </form>
+</div>

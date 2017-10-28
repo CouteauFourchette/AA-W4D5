@@ -1,0 +1,27 @@
+// Place all the styles related to the Bands controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table {
+  input {
+    width: 120px;
+    cursor: pointer;
+  }
+  a {
+    display: block;
+    width: 100px;
+    background-color: white;
+    padding: 15px;
+    background: transparent;
+    outline: none;
+    color: #726659;
+    border: solid 1px #b3aca7;
+
+    text-align: center;
+    text-decoration: none;
+  }
+  table td {
+    vertical-align: middle;
+  }
+
+}

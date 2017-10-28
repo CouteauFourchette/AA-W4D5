@@ -1,0 +1,29 @@
+<h1>New Track</h1>
+
+<%= render 'errors' %>
+<div class='form'>
+  <form action="<%= tracks_url %>" method="post">
+    <%= auth_token %>
+
+    <input type="text" name="track[title]" value="<%= @track.title %>" placeholder="title">
+    <input type="text" name="track[ord]" value="<%= @track.ord %>" placeholder="ord">
+
+    <div class="radios">
+      <label for="regular">Bonus?: </label>
+      <input type="checkbox" name="track[regular]" value="false" id="regular">
+
+      <label for="album">Album: </label>
+      <div class="select-style">
+        <select id='album' name="track[album_id]">
+          <% Album.all.each do |album| %>
+          <option value="<%= album.id %>"><%= album.title %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+
+    <textarea name="track[lyrics]" rows="8" cols="80"></textarea>
+
+    <input type="submit" value="Create Track" class="submit">
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<h1>Edit Album</h1>
+
+<%= render 'errors' %>
+<div class='form'>
+  <form action="<%= album_url %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name='_method' value='PATCH'>
+    <input type="text" name="album[title]" value="<%= @album.title %>" placeholder="title">
+    <input type="text" name="album[year]" value="<%= @album.year %>" placeholder="year">
+
+    <div class="radios">
+      <label for="live">Live: </label>
+      <input type="checkbox" name="album[live]" value="true" id="live">
+
+      <label for="band">Band: </label>
+      <div class="select-style">
+        <select id='band' name="album[band_id]">
+          <% Band.all.each do |band| %>
+          <option value="<%= band.id %>" <%= 'selected' if band.id==@album.band_id %>><%= band.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <input type="submit" value="Update Album" class="submit">
+  </form>
+</div>

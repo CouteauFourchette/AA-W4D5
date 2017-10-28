@@ -1,0 +1,26 @@
+<h1>New Album</h1>
+
+<%= render 'errors' %>
+<div class='form'>
+  <form action="<%= albums_url %>" method="post">
+    <%= auth_token %>
+
+    <input type="text" name="album[title]" value="<%= @album.title %>" placeholder="title">
+    <input type="text" name="album[year]" value="<%= @album.year %>" placeholder="year">
+
+    <div class="radios">
+      <label for="live">Live: </label>
+      <input type="checkbox" name="album[live]" value="true" id="live">
+
+      <label for="band">Band: </label>
+      <div class="select-style">
+        <select id='band' name="album[band_id]">
+          <% Band.all.each do |band| %>
+          <option value="<%= band.id %>"><%= band.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <input type="submit" value="Create Album" class="submit">
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<% @bands.each do |band| %>
+
+
+<h1>Albums of <%= band.name %></h1>
+
+<% if band.albums.length > 0 %>
+<table class='table'>
+  <th>title</th>
+  <th>year</th>
+  <th>live?</th>
+
+  <% band.albums.each do |album| %>
+    <tr>
+     <td><%= album.title %></td>
+     <td><%= album.year %></td>
+     <td><%= album.live %></td>
+     <td><a href="<%= band_album_tracks_url(album.band_id, album.id) %>"> tracks </a></td>
+     <td><a href="<%= edit_album_url(album) %>"> edit </a></td>
+     <td><form action="<%= album_url(album) %>" method="post">
+       <%= auth_token %>
+       <input type="hidden" name='_method' value='DELETE'>
+       <input type="submit" value="Delete">
+     </form></td>
+   </tr>
+  <% end %>
+</table>
+
+  <% else %>
+    No albums
+  <% end %>
+<% end %>
+
+<form action="<%= new_album_url %>" method="get">
+  <%= auth_token %>
+  <input type="submit" value="New" class='big'>
+</form>

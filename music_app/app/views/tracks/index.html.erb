@@ -1,0 +1,39 @@
+
+<h1>Tracks</h1>
+
+<% @bands.each do |band|  %>
+<h2><%= band.name %></h2>
+<% band.albums.each do |album|  %>
+<% if album.tracks.length > 0 %>
+<h2><%= album.title %></h2>
+<table class='table'>
+  <th>title</th>
+  <th>ord</th>
+  <th>regular?</th>
+
+
+  <% album.tracks.each do |track| %>
+    <tr>
+     <td><%= track.title %></td>
+     <td><%= track.ord %></td>
+     <td><%= track.regular %></td>
+     <td><a href="<%= edit_track_url(track) %>"> edit </a></td>
+     <td><form action="<%= track_url(track) %>" method="post">
+       <%= auth_token %>
+       <input type="hidden" name='_method' value='DELETE'>
+       <input type="submit" value="Delete">
+     </form></td>
+   </tr>
+  <% end %>
+
+</table>
+
+<% end %>
+
+<% end  %>
+<% end %>
+
+<form action="<%= new_track_url %>" method="get">
+  <%= auth_token %>
+  <input type="submit" value="New" class='big'>
+</form>

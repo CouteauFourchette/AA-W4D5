@@ -1,0 +1,11 @@
+<h1>Edit Band</h1>
+
+<%= render 'errors' %>
+<div class='form'>
+  <form action="<%= band_url(@band) %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name='_method' value='PATCH'>
+    <input type="text" name="band[name]" value="<%= @band.name %>" placeholder="band name">
+    <input type="submit" value="Update Band" class="submit">
+  </form>
+</div>

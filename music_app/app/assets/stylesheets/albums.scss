@@ -1,0 +1,45 @@
+// Place all the styles related to the albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.radios {
+  display: flex;
+  padding: 15px;
+  justify-content: flex-start;
+
+  input {
+    margin-left: 20px;
+  }
+  label {
+    margin-right: 20px;
+  }
+
+
+}
+
+
+.select-style {
+    border: 1px solid #ccc;
+    width: 220px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+.albums {
+  
+}
