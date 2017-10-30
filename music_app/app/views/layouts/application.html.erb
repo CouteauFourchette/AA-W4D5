@@ -21,7 +21,7 @@
         <% if logged_in? %>
         <li><a href="<%= user_url(current_user) %>"> <%= current_user.email %> </a> </li>
         <li>
-          <form action="<%= sessions_url %>" method="post" >
+          <form action="<%= session_url %>" method="post" >
             <%= auth_token %>
             <input type="hidden" name='_method' value='DELETE'>
             <input type="submit" value="log out">
@@ -29,7 +29,7 @@
       </li>
         <% else %>
       <li>
-        <form action="<%= new_sessions_url %>" method="get" >
+        <form action="<%= new_session_url %>" method="get" >
           <%= auth_token %>
           <input type="submit" value="sign in">
         </form>

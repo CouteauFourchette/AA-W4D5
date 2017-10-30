@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:email], params[:password])
     if @user
       log_in!(@user)
-      redirect_to user_url(id: @user)
+      redirect_to bands_url
     else
       @user = User.new
       flash.now['errors'] = ['Email or Password wrong']
@@ -18,8 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    current_user.reset_session_token!
-    session[:session_token] = nil
+    log_out!
+    redirect_to new_session_url
   end
 
 

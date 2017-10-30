@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    
+
+    <link rel="stylesheet" media="all" href="/assets/application-71c62c30b376fd8e790bc0688a115c9bcccb2bedfc97a0f04e8d1bcd57ed4b6c.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-2dc1f3d448c44c55769e1b1278b485b406946e3fb57cb3816eb8d5b8f62178cd.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="http://www.example.com/bands" ><h1> Music App </h1> </a>
+      <ul class='sections'>
+
+        <li><a href="http://www.example.com/bands"  > bands </a></li>
+        <li><a href="http://www.example.com/albums" > albums </a></li>
+        <li><a href="http://www.example.com/tracks" > tracks </a></li>
+      </ul>
+      <ul id='log_in_info'>
+      <li>
+        <form action="http://www.example.com/session/new" method="get" >
+          <input type='hidden' name='authenticity_token' value='IShgrvycUPbjTx+IYlVDnxFGsIWHnbca76mqTEpUoxVoOjEXvbTMV8Xresk89WkDPbCKzylDLnGC7vola6rYqQ=='>
+          <input type="submit" value="sign in">
+        </form>
+    </li>
+
+      <li>
+        <form action="http://www.example.com/users/new" method="get" >
+          <input type='hidden' name='authenticity_token' value='i54dGgKdW2sd+br3PBz07Wd1firK/CSNpEGBMi+cwUjCjEyjQ7XHyjtd37ZivN5xS4NEYGQivebJBtFbDmK69A=='>
+          <input type="submit" value="sign up">
+        </form>
+    </li>
+      </ul>
+    </header>
+    <h1>Sign Up</h1>
+
+  <ul class='errors'>
+    <li> Password is too short (minimum is 6 characters) </li>
+  </ul>
+
+<div class='form'>
+  <form action="http://www.example.com/users" method="post">
+    <input type='hidden' name='authenticity_token' value='Xox38ueispUgSknmgywm7AhIRF2DbO577hHQcfPU19kXniZLpoouNAbuLKfdjAxwJL5+Fy2ydxCDVoAY0iqsZQ=='>
+    <label for="email">Email</label>
+    <input id="email" type="text" name="user[email]" value="testing@email.com" placeholder="email">
+    <label for="password">Password</label>
+    <input id='password' type="password" name="user[password]" value="" placeholder="password">
+    <input type="submit" value="Sign Up" class="submit">
+  </form>
+</div>
+
+  </body>
+</html>
